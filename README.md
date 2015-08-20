@@ -1,5 +1,5 @@
 # PHP Authentication
-My work on a tutorial by Alex Garrett (Codecourse). Thanks Alex!
+My work on a [tutorial by Alex Garrett](https://www.youtube.com/playlist?list=PLfdtiltiRHWGKUvioJly40RJZchSG2-34) (Codecourse). Thanks Alex!
 
 ## Dependencies
 1. [Slim](https://github.com/slimphp/Slim)
@@ -15,66 +15,13 @@ My work on a tutorial by Alex Garrett (Codecourse). Thanks Alex!
 
 
 ## Getting it Goin'
-You should only need to create a configuration file in /app/config/ with your own parameters.
-
-Example configuration file:
+Go ahead and change /app/config/development.php.example to development.php and input your own appropriate parameters:
 
 ```
-<?php
-
-// /app/config/development.php
-// Development Configuration
-
-return [
-
-	'app' => [
-		'url' => 'http://localhost/',
-		'hash' => [
-			'algo' => PASSWORD_BCRYPT,
-			'cost' => 10
-		]
-	],
-
-	'db' => [
-		'driver' => 'mysql',
-		'host' => '127.0.0.1',
-		'name' => 'site',
-		'username' => 'root',
-		'password' => '',
-		'charset' => 'utf8',
-		'collation' => 'utf8_unicode_ci',
-		'prefix' => ''
-	],
-
-	'auth' => [
-		'session' => 'user_id',
-		'remember' => 'user_r'
-	],
-
-	'mail' => [
-		'smtp_auth' => true,
-		'smtp_secure' => 'tls',
-		'host' => 'smtp.gmail.com',
-		'username' => 'example@gmail.com',
-		'password' => 'email_password',
-		'port' => '587',
-		'html' => true
-	],
-
-	'twig' => [
-		'debug' => true
-	],
-
-	'csrf' => [
-		'session' => 'csrf_token'
-	]
-
-];
-
-?>
+cp /app/config/development.php.example /app/config/development.php
 ```
 
-Change mode.php to reference the appropriate configuration file name. In this case, it would be called development.php and have the follow text:
+You can make multiple configuration files with different filenames and change mode.php to reference the appropriate configuration filename. In the above case, it would be called development.php and have the following text:
 
 ```
 development

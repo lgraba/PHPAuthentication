@@ -14,6 +14,8 @@ use Noodlehaus\Config;
 use Logan\User\User;
 // Use Logan namespace for Hash
 use Logan\Helpers\Hash;
+// Use Validation namespace for Validator
+use Logan\Validation\Validator;
 
 // Turn on PHP error reporting
 ini_set('display_errors', 'On');
@@ -53,6 +55,11 @@ $app->container->set('user', function () {
 // Put Hash model into SLim container as a singleton (constant)
 $app->container->singleton('hash', function() use ($app) {
 	return new Hash($app->config);
+});
+
+// Put Validation model (now with the user) into Slim container as a singleton (constant)
+$app->container->singleton('validation', function() use ($app) {
+	return new Validator($app->user);
 });
 
 // Configure Slim Views with Twig parser
