@@ -15,11 +15,13 @@ My work on a [tutorial by Alex Garrett](https://www.youtube.com/playlist?list=PL
 
 
 ## Getting it Goin'
-Go ahead and change /app/config/development.php.example to development.php and input your own appropriate parameters:
+Go ahead and change /app/config/development.php.example to development.php,
 
 ```
 cp /app/config/development.php.example /app/config/development.php
 ```
+
+ and input your own appropriate parameters within.
 
 You can make multiple configuration files with different filenames and change mode.php to reference the appropriate configuration filename. In the above case, it would be called development.php and have the following text:
 
@@ -28,4 +30,4 @@ development
 ```
 
 ## Up Next
-I am going to continue with validation using Alex Garrett's Violin validation package according to his tutorial. I will then create the rest of the routes and views and add some CSS via SASS/SCSS.
+Creating some middleware for session handling.
