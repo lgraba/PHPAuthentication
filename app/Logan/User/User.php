@@ -22,4 +22,20 @@ class User extends Eloquent
 		'remember_identifier',
 		'remember_token'
 	];
+
+	public function getFullName()
+	{
+		// Check if current Model state does not have first or last name present
+		if (!$this->first_name || !$this->last_name) {
+			return null;
+		}
+		// If it does, return first and last name in Twig markup
+		return "{$this->first_name} {$this->last_name}";
+	}
+
+	public function getFullNameOrUsername()
+	{
+		return $this->getFullName() ?: $this->username;
+	}
+
 }

@@ -30,4 +30,4 @@ development
 ```
 
 ## Up Next
-Creating some middleware for session handling.
+Emailing with PHPMailer

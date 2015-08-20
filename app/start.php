@@ -16,6 +16,8 @@ use Logan\User\User;
 use Logan\Helpers\Hash;
 // Use Validation namespace for Validator
 use Logan\Validation\Validator;
+// Use Logan Middleware namespace for BeforeMiddleWare
+use Logan\Middleware\BeforeMiddleware;
 
 // Turn on PHP error reporting
 ini_set('display_errors', 'On');
@@ -37,6 +39,8 @@ $app = new Slim([
 	'templates.path' => INC_ROOT . '/app/views'
 ]);
 
+$app->add(new BeforeMiddleware);
+
 // Actually load configuration into SLim application
 $app->configureMode($app->config('mode'), function() use ($app) {
 	$app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");
@@ -46,6 +50,9 @@ $app->configureMode($app->config('mode'), function() use ($app) {
 require 'database.php';
 // Routes
 require 'routes.php';
+
+// Set user session authentication to false
+$app->auth = false;
 
 // Put User model into Slim container
 $app->container->set('user', function () {
