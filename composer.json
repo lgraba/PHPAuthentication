@@ -1,0 +1,17 @@
+{
+	"autoload": {
+		"psr-4": {
+			"Logan\\": "app/Logan"
+		}
+	},
+    "require": {
+        "slim/slim": "~2.0",
+        "slim/views": "0.1.*",
+        "twig/twig": "~1.0",
+        "phpmailer/phpmailer": "~5.2",
+        "hassankhan/config": "0.8.*",
+        "alexgarrett/violin": "2.*",
+        "illuminate/database": "~5.0",
+        "ircmaxell/random-lib": "~1.1"
+    }
+}
