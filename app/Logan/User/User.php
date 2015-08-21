@@ -38,4 +38,13 @@ class User extends Eloquent
 		return $this->getFullName() ?: $this->username;
 	}
 
+	public function activateAccount()
+	{
+		// Set 'active' to true and delete 'active_hash' in database
+		$this->update([
+			'active' => true,
+			'active_hash' => null
+		]);
+	}
+
 }

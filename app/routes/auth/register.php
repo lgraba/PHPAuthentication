@@ -31,15 +31,22 @@ $app->post('/register', function() use ($app) {
 	]);
 
 	if ($v->passes()) {
+
+		// Random String identifier
+		$identifier = $app->randomlib->generateString(128);
+
 		// Create database entry using Slim's functionality
 		$user = $app->user->create([ // Necessary to assign this to variable for user in sending registration email
 			'email' => $email,
 			'username' => $username,
-			'password' => $app->hash->password($password)
+			'password' => $app->hash->password($password),
+			'active' => false,
+			'active_hash' => $app->hash->hash($identifier)
 		]);
 
-		// Send registration email - Add To Name later
-		$app->mail->send('email/auth/register.php', ['user' => $user], function($message) use ($user) {
+
+		// Send registration email
+		$app->mail->send('email/auth/register.php', ['user' => $user, 'identifier' => $identifier], function($message) use ($user) {
 			// Set message details
 			$message->to($user->email, $user->getFullNameOrUsername());
 			$message->subject('Thanks for registering with Authentication, ' . $user->getFullNameOrUsername() . '!');

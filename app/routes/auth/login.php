@@ -30,6 +30,7 @@ $app->post('/login', function () use ($app) {
 		$user = $app->user
 			->where('username', $identifier)
 			->orWhere('email', $identifier)
+			->where('active', true)
 			->first();
 
 		// If the User exists AND Passwords match (see passwordCheck in Logan\Helpers\Hash.php)
@@ -45,7 +46,7 @@ $app->post('/login', function () use ($app) {
 		} else {
 
 			// Flash a message at the top and redirect to Login
-			$app->flash('global', 'Could not log you in! Try another Identifier/Password combination.');
+			$app->flash('global', 'Could not log you in!');
 			$app->response->redirect($app->urlFor('login'));
 
 		}
