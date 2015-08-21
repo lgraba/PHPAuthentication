@@ -30,4 +30,4 @@ development
 ```
 
 ## Up Next
-Emailing with PHPMailer
+Email Templates
