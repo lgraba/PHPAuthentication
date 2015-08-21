@@ -48,7 +48,7 @@ You can make multiple configuration files with different filenames and change mo
 development
 ```
 
-## Up Next
+## Progress
 
 ##### The Tutorial so far: PHP Authentication by Alex Garrett (Codecourse)
 + Used composer to install dependencies from packagist.org
@@ -70,11 +70,11 @@ development
 + Created CSRF middleware and implemented it in all existing forms to protect against CSRF attacks
 + Added logout route and appropriate link to navigation
 
-##### Next Section:
-Profile pictures
-Remember me function
+##### Up Next:
++ Profile pictures
++ Remember me function
 
-##### Todo: A few things I've thought about doing so far
+##### Todo: A few things I've thought about doing in the future
 1. Add first and last names to User, Login route, and all associated views.
 2. Allow user to view and edit their profile
 3. Allow user to recover their password via hash link
