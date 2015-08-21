@@ -41,14 +41,17 @@ $app->configureMode($app->config('mode'), function() use ($app) {
 	$app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");
 });
 
+
+// The order of these requires is important (ex: Filters before Routes because Filters is middleware FOR the routes)
 // Database
 require 'database.php';
+// Filters
+require 'filters.php';
 // Routes
 require 'routes.php';
 
 // Set user session authentication to false
 $app->auth = false;
-
 
 // Container Additions
 

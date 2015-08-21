@@ -1,5 +1,5 @@
 {% if auth %}
-	<p>Hello, {{ auth.getFullNameOrUsername }}!</p>
+	<p>{{ auth.getFullNameOrUsername }}</p>
 {% endif %}
 <ul>
 	<li><a href="{{ urlFor('home') }}">Home</a></li>

@@ -3,7 +3,7 @@
 // activate.php
 // Allow the user to activate their account
 
-$app->get('/activate', function() use ($app) {
+$app->get('/activate', $guest(), function() use ($app) {
 	
 	// Compare hashed GET identifier with database 'active_hash'
 	// If they match, activate user by setting database field 'active' to true

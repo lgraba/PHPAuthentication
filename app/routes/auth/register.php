@@ -4,12 +4,12 @@
 // Registration Form Route
 
 // Registration Form Entry Route
-$app->get('/register', function() use ($app) {
+$app->get('/register', $guest(), function() use ($app) {
 	$app->render('/auth/register.php');
 })->name('register');
 
 // Registration POST Handling Route
-$app->post('/register', function() use ($app) {
+$app->post('/register', $guest(), function() use ($app) {
 
 	// Store everything sent via this POST request
 	$request = $app->request;

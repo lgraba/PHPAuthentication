@@ -3,14 +3,14 @@
 // login.php
 // Allow the user to Login!
 
-$app->get('/login', function () use ($app) {
+$app->get('/login', $guest(), function () use ($app) {
 
 	$app->render('auth/login.php');
 
 })->name('login');
 
 // POST data handling on form submission
-$app->post('/login', function () use ($app) {
+$app->post('/login', $guest(), function () use ($app) {
 
 	$request = $app->request;
 
@@ -40,7 +40,7 @@ $app->post('/login', function () use ($app) {
 			$_SESSION[$app->config->get('auth.session')] = $user->id;
 
 			// Flash a message at the top and redirect to Home
-			$app->flash('global', 'Damn, yer loggin\' Redwoods, boy!');
+			$app->flash('global', 'You are now logged in...');
 			$app->response->redirect($app->urlFor('home'));
 
 		} else {
