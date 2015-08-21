@@ -51,25 +51,25 @@ development
 ## Up Next
 
 ##### The Tutorial so far: PHP Authentication by Alex Garrett (Codecourse)
-Used composer to install dependencies from packagist.org
-Set up directory structure, Slim framework, .htaccess for public directory
-Configuration files
-Created and structured database table Users
-Used Eloquent to create first database-model, writing some of our own namespaced classes
-Set up basic routes and views (home) using Slim and Twig
-Implemented flash messages for user notifications
-Set up a helper called Hash that allows us to hash passwords for security
-Register route and view
-Used Alex Garrett's Violin validation to validate form entries
-Logging in the user and some session stuff
-PHPMailer and a couple related classes to send notification emails
-Email routes and views/templates
-RandomLib to create random strings for hasing, like in account activation
-Finished up account activation via email and activate route
-Created filter middleware in order to protect routes from an authenticated user (Login, Register, Activate) or guest user
++ Used composer to install dependencies from packagist.org
++ Set up directory structure, Slim framework, .htaccess for public directory
++ Configuration files
++ Created and structured database table Users
++ Used Eloquent to create first database-model, writing some of our own namespaced classes
++ Set up basic routes and views (home) using Slim and Twig
++ Implemented flash messages for user notifications
++ Set up a helper called Hash that allows us to hash passwords for security
++ Register route and view
++ Used Alex Garrett's Violin validation to validate form entries
++ Logging in the user and some session stuff
++ PHPMailer and a couple related classes to send notification emails
++ Email routes and views/templates
++ RandomLib to create random strings for hasing, like in account activation
++ Finished up account activation via email and activate route
++ Created filter middleware in order to protect routes from an authenticated user (Login, Register, Activate) or guest user
++ Created CSRF middleware and implemented it in all existing forms to protect against CSRF attacks
 
 ##### Next Section:
-CSRF protection
 Logging Out
 
 ##### Todo: A few things I've thought about doing so far

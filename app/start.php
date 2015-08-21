@@ -13,6 +13,7 @@ use Logan\Helpers\Hash;
 use Logan\Mail\Mailer;
 use Logan\Validation\Validator;
 use Logan\Middleware\BeforeMiddleware;
+use Logan\Middleware\CsrfMiddleware;
 
 // Turn on PHP error reporting
 ini_set('display_errors', 'On');
@@ -34,7 +35,9 @@ $app = new Slim([
 	'templates.path' => INC_ROOT . '/app/views'
 ]);
 
+// Add our middlewares
 $app->add(new BeforeMiddleware);
+$app->add(new CsrfMiddleware);
 
 // Actually load configuration into SLim application
 $app->configureMode($app->config('mode'), function() use ($app) {
