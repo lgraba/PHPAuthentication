@@ -30,13 +30,17 @@ return [
 	],
 
 	'mail' => [
+		'smtp' => true,
 		'smtp_auth' => true,
-		'smtp_secure' => 'tls',
+		'smtp_secure' => 'ssl',
 		'host' => 'smtp.gmail.com',
 		'username' => 'example@gmail.com',
-		'password' => 'examplepass',
-		'port' => '587',
-		'html' => true
+		'password' => 'gmail_password',
+		'port' => '465',
+		'html' => true,
+		'from' => 'example@gmail.com',
+		'from_name' => 'Logan Graba',
+		'add_reply_to' => 'example@gmail.com'
 	],
 
 	'twig' => [

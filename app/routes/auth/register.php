@@ -32,11 +32,18 @@ $app->post('/register', function() use ($app) {
 
 	if ($v->passes()) {
 		// Create database entry using Slim's functionality
-		$app->user->create([
+		$user = $app->user->create([ // Necessary to assign this to variable for user in sending registration email
 			'email' => $email,
 			'username' => $username,
 			'password' => $app->hash->password($password)
 		]);
+
+		// Send registration email - Add To Name later
+		$app->mail->send('email/auth/register.php', ['user' => $user], function($message) use ($user) {
+			// Set message details
+			$message->to($user->email);
+			$message->subject('Thanks for registering!');
+		});
 
 		// Flash global message notification
 		$app->flash('global', 'You have been registered!');

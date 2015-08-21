@@ -2,21 +2,15 @@
 
 // start.php
 
-// Use Slim namespace
+// Namespaces
 use Slim\Slim;
-// Use Twig namespace
 use Slim\Views\Twig;
-// Use TwigExtension namespace
 use Slim\Views\TwigExtension;
-// Use Noodlehaus (Hassankhan Config) namespace
 use Noodlehaus\Config;
-// Use Logan namespace for User
 use Logan\User\User;
-// Use Logan namespace for Hash
 use Logan\Helpers\Hash;
-// Use Validation namespace for Validator
+use Logan\Mail\Mailer;
 use Logan\Validation\Validator;
-// Use Logan Middleware namespace for BeforeMiddleWare
 use Logan\Middleware\BeforeMiddleware;
 
 // Turn on PHP error reporting
@@ -54,19 +48,43 @@ require 'routes.php';
 // Set user session authentication to false
 $app->auth = false;
 
+
+// Container Additions
+
 // Put User model into Slim container
 $app->container->set('user', function () {
 	return new User;
 });
-
 // Put Hash model into SLim container as a singleton (constant)
 $app->container->singleton('hash', function() use ($app) {
 	return new Hash($app->config);
 });
-
 // Put Validation model (now with the user) into Slim container as a singleton (constant)
 $app->container->singleton('validation', function() use ($app) {
 	return new Validator($app->user);
+});
+// Put PHPMailer model into SLim container (singleton)
+$app->container->singleton('mail', function () use ($app) {
+
+	$mailer = new PHPMailer;
+
+	// Set PHPMailer configuration from config file
+	$mailer->isSMTP($app->config->get('mail.smtp'));
+	$mailer->Host = $app->config->get('mail.host');
+	$mailer->SMTPAuth = $app->config->get('mail.smtp_auth');
+	$mailer->SMTPSecure = $app->config->get('mail.smtp_secure');
+	$mailer->Port = $app->config->get('mail.port');
+	$mailer->Username = $app->config->get('mail.username');
+	$mailer->Password = $app->config->get('mail.password');
+	$mailer->isHTML($app->config->get('mail.html'));
+
+	$mailer->From = 'lgraba@gmail.com';
+ 	$mailer->FromName = 'Logan Graba';
+ 	$mailer->addReplyTo('logangraba@gmail.com', 'Reply Address');
+
+	// Return mailer object
+	return new Mailer($app->view, $mailer);
+
 });
 
 // Configure Slim Views with Twig parser
