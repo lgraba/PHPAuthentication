@@ -68,16 +68,16 @@ development
 + Finished up account activation via email and activate route
 + Created filter middleware in order to protect routes from an authenticated user (Login, Register, Activate) or guest user
 + Created CSRF middleware and implemented it in all existing forms to protect against CSRF attacks
++ Added logout route and appropriate link to navigation
 
 ##### Next Section:
-Logging Out
+Profile pictures
+Remember me function
 
 ##### Todo: A few things I've thought about doing so far
 1. Add first and last names to User, Login route, and all associated views.
 2. Allow user to view and edit their profile
 3. Allow user to recover their password via hash link
-4. Allow user to logout
-5. Allow user to select a checkbox for remembering them?
-6. API for user statistics?
-7. Create administrator user permission
-8. Create routes and views appropriate to administrator permission
+4. API for user statistics?
+5. Create administrator user permission
+6. Create routes and views appropriate to administrator permission
