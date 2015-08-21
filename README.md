@@ -66,9 +66,11 @@ PHPMailer and a couple related classes to send notification emails
 Email routes and views/templates
 RandomLib to create random strings for hasing, like in account activation
 Finished up account activation via email and activate route
+Created filter middleware in order to protect routes from an authenticated user (Login, Register, Activate) or guest user
 
 ##### Next Section:
-Filters
+CSRF protection
+Logging Out
 
 ##### Todo: A few things I've thought about doing so far
 1. Add first and last names to User, Login route, and all associated views.
