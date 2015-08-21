@@ -42,7 +42,7 @@ $app->post('/register', function() use ($app) {
 		$app->mail->send('email/auth/register.php', ['user' => $user], function($message) use ($user) {
 			// Set message details
 			$message->to($user->email, $user->getFullNameOrUsername());
-			$message->subject('Thanks for registering, ' . $user->getFullNameOrUsername());
+			$message->subject('Thanks for registering with Authentication, ' . $user->getFullNameOrUsername() . '!');
 		});
 
 		// Flash global message notification

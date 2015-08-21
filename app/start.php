@@ -7,6 +7,7 @@ use Slim\Slim;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Noodlehaus\Config;
+use RandomLib\Factory as RandomLib;
 use Logan\User\User;
 use Logan\Helpers\Hash;
 use Logan\Mail\Mailer;
@@ -63,7 +64,7 @@ $app->container->singleton('hash', function() use ($app) {
 $app->container->singleton('validation', function() use ($app) {
 	return new Validator($app->user);
 });
-// Put PHPMailer model into SLim container (singleton)
+// Put PHPMailer model into Slim container (singleton)
 $app->container->singleton('mail', function () use ($app) {
 
 	$mailer = new PHPMailer;
@@ -85,6 +86,11 @@ $app->container->singleton('mail', function () use ($app) {
 	// Return mailer object
 	return new Mailer($app->view, $mailer);
 
+});
+// Put RandomLib into Slim container (singleton)
+$app->container->singleton('randomlib', function () {
+	$factory = new RandomLib;
+	return $factory->getMediumStrengthGenerator();
 });
 
 // Configure Slim Views with Twig parser

@@ -33,6 +33,7 @@ Set up a database (Default Name: site) with the following structure:
 | created_at          | timestamp    | No   | CURRENT_TIMESTAMP  |          |
 | updated_at          | timestamp    | Yes  | NULL               |          |
 
+
 Go ahead and copy /app/config/development.php.example to development.php,
 
 ```
