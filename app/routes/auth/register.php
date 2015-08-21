@@ -41,8 +41,8 @@ $app->post('/register', function() use ($app) {
 		// Send registration email - Add To Name later
 		$app->mail->send('email/auth/register.php', ['user' => $user], function($message) use ($user) {
 			// Set message details
-			$message->to($user->email);
-			$message->subject('Thanks for registering!');
+			$message->to($user->email, $user->getFullNameOrUsername());
+			$message->subject('Thanks for registering, ' . $user->getFullNameOrUsername());
 		});
 
 		// Flash global message notification

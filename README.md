@@ -15,13 +15,31 @@ My work on a [tutorial by Alex Garrett](https://www.youtube.com/playlist?list=PL
 
 
 ## Getting it Goin'
-Go ahead and change /app/config/development.php.example to development.php,
+Set up a database (Default Name: site) with the following structure:
+
+| Column              | Type         | Null | Default            | Comments |
+|---------------------|--------------|------|--------------------|----------|
+| id                  | int(11)      | No   |                    |          |
+| username            | varchar(32)  | No   |                    |          |
+| email               | varchar(255) | No   |                    |          |
+| first_name          | varchar(64)  | Yes  | NULL               |          |
+| last_name           | varchar(64)  | Yes  | NULL               |          |
+| password            | varchar(255) | No   |                    |          |
+| active              | tinyint(1)   | No   |                    |          |
+| active_hash         | varchar(255) | Yes  | NULL               |          |
+| recover_hash        | varchar(255) | Yes  | NULL               |          |
+| remember_identifier | varchar(255) | Yes  | NULL               |          |
+| remember_token      | varchar(255) | Yes  | NULL               |          |
+| created_at          | timestamp    | No   | CURRENT_TIMESTAMP  |          |
+| updated_at          | timestamp    | Yes  | NULL               |          |
+
+Go ahead and copy /app/config/development.php.example to development.php,
 
 ```
 cp /app/config/development.php.example /app/config/development.php
 ```
 
- and input your own appropriate parameters within.
+ and input your own appropriate parameters within, including the name of your database.
 
 You can make multiple configuration files with different filenames and change mode.php to reference the appropriate configuration filename. In the above case, it would be called development.php and have the following text:
 
