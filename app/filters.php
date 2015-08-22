@@ -9,10 +9,13 @@ $authenticationCheck = function($required) use ($app) {
 	return function() use ($required, $app) {
 		// If user is not logged in and we pass true (IS required), or if the user is logged in and we pass false (IS NOT required)...
 		if ((!$app->auth && $required) || ($app->auth && !$required)) {
+
+			// We can not grab the username if they aren't logged in
 			// Grab the username to use in the flash message if the user is logged in
-			$u = $app->auth->username;
+			// $u = $app->auth->username;
+
 			// Kick em out of the protected route back to home, flash a silly message
-			$app->flash('global', 'You shan\'t by allowed there! Try navigating using the sexy navigation menu, ' . $u . ' :)');
+			$app->flash('global', 'You shan\'t by allowed there ;) Try the navigation menu.');
 			$app->redirect($app->urlFor('home'));
 		}
 	};

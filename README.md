@@ -94,10 +94,11 @@ Then you should be good to go, for the most part.
 + Users List Route, View, and nav link
 + User Permissions - Created table, class, routes, and views for example administrator area
 + Custom 404 page
++ Change password form, route handling, validation, and view
 
 #### Up Next:
-+ Change password
 + Recover forgotten password
++ Update user information
 
 #### Todo: A few things I've thought about doing in the future
 + How to handle user statistics

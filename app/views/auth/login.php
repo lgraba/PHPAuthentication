@@ -9,13 +9,13 @@
 	<div>
 		<label for="identifier">Username/Email</label>
 		<input type="text" name="identifier" id="identifier">
-		{% if errors.first('Identifier') %}{{ errors.first('Identifier') }}{% endif %}
+		{% if errors.has('Identifier') %}{{ errors.first('Identifier') }}{% endif %}
 	</div>
 
 	<div>
 		<label for="password">Password</label>
 		<input type="password" name="password" id="password">
-		{% if errors.first('Password') %}{{ errors.first('Password')}}{% endif %}
+		{% if errors.has('Password') %}{{ errors.first('Password')}}{% endif %}
 	</div>
 
 	<div>

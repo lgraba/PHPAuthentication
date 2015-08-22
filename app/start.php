@@ -68,7 +68,7 @@ $app->container->singleton('hash', function() use ($app) {
 });
 // Put Validation model (now with the user) into Slim container as a singleton (constant)
 $app->container->singleton('validation', function() use ($app) {
-	return new Validator($app->user);
+	return new Validator($app->user, $app->hash, $app->auth);
 });
 // Put PHPMailer model into Slim container (singleton)
 $app->container->singleton('mail', function () use ($app) {
