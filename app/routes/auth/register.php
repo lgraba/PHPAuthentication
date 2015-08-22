@@ -3,6 +3,9 @@
 // register.php
 // Registration Form Route
 
+// UserPermission
+use Logan\User\UserPermission;
+
 // Registration Form Entry Route
 $app->get('/register', $guest(), function() use ($app) {
 	$app->render('/auth/register.php');
@@ -43,6 +46,10 @@ $app->post('/register', $guest(), function() use ($app) {
 			'active' => false,
 			'active_hash' => $app->hash->hash($identifier)
 		]);
+
+		// Create user permission set
+		// Because it is a static property, we use the scope resolution operator (::) to pull the default value(s) in and create a database entry with it
+		$user->permissions()->create(UserPermission::$defaults);
 
 
 		// Send registration email

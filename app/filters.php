@@ -27,3 +27,17 @@ $authenticated = function() use ($authenticationCheck) {
 $guest = function() use ($authenticationCheck) {
 	return $authenticationCheck(false);
 };
+
+// For routes that should be accessible only by administrator
+$admin = function() use ($app) {
+	return function() use ($app) {
+
+		// If they are not logged in, or are not an Administrator
+		if (!$app->auth || !$app->auth->isAdmin()) {
+			// Flash message and redirect to home
+			$app->flash('global', 'You are not an Administator.');
+			$app->redirect($app->urlFor('home'));
+			
+		}
+	};	
+};

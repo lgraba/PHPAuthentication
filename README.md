@@ -14,39 +14,61 @@ My work on a [tutorial by Alex Garrett](https://www.youtube.com/playlist?list=PL
 *Check the Composer file, composer.json, for the dependency list with versions*
 
 
-## Getting it Goin'
-Set up a database (Default Name: site) with the following structure:
+## Getting Started
+#### Database Setup
 
-| Column              | Type         | Null | Default            | Comments |
-|---------------------|--------------|------|--------------------|----------|
-| id                  | int(11)      | No   |                    |          |
-| username            | varchar(32)  | No   |                    |          |
-| email               | varchar(255) | No   |                    |          |
-| first_name          | varchar(64)  | Yes  | NULL               |          |
-| last_name           | varchar(64)  | Yes  | NULL               |          |
-| password            | varchar(255) | No   |                    |          |
-| active              | tinyint(1)   | No   |                    |          |
-| active_hash         | varchar(255) | Yes  | NULL               |          |
-| recover_hash        | varchar(255) | Yes  | NULL               |          |
-| remember_identifier | varchar(255) | Yes  | NULL               |          |
-| remember_token      | varchar(255) | Yes  | NULL               |          |
-| created_at          | timestamp    | No   | CURRENT_TIMESTAMP  |          |
-| updated_at          | timestamp    | Yes  | NULL               |          |
+First Set up a database (Default Name: site).
+
+Create table 'users' with the following structure:
+
+| Column              | Type         | Null | Default            |
+|---------------------|--------------|------|--------------------|
+| id (Primary, AI)    | int(11)      | No   |                    |
+| username            | varchar(32)  | No   |                    |
+| email               | varchar(255) | No   |                    |
+| first_name          | varchar(64)  | Yes  | NULL               |
+| last_name           | varchar(64)  | Yes  | NULL               |
+| password            | varchar(255) | No   |                    |
+| active              | tinyint(1)   | No   |                    |
+| active_hash         | varchar(255) | Yes  | NULL               |
+| recover_hash        | varchar(255) | Yes  | NULL               |
+| remember_identifier | varchar(255) | Yes  | NULL               |
+| remember_token      | varchar(255) | Yes  | NULL               |
+| created_at          | timestamp    | No   | CURRENT_TIMESTAMP  |
+| updated_at          | timestamp    | Yes  | NULL               |
+
+Create table 'users_permissions' with the following structure:
+
+| Column           | Type       | Null | Default            |
+|------------------|------------|------|--------------------|
+| id (Primary, AI) | int(11)    | No   |                    |
+| user_id          | int(11)    | No   |                    |
+| is_admin         | tinyint(4) | No   |                    |
+| created_at       | timestamp  | Yes  | CURRENT_TIMESTAMP  |
+| updated_at       | timestamp  | Yes  | NULL               |
 
 
-Go ahead and copy /app/config/development.php.example to development.php,
+#### Configuration
+
+Go ahead and copy /app/config/development.php.example to development.php:
 
 ```
 cp /app/config/development.php.example /app/config/development.php
 ```
 
- and input your own appropriate parameters within, including the name of your database.
+Take a look at development.php and input your own appropriate parameters within:
+1. App URL (app.url)
+2. Database Configuration (db.*)
+3. PHPMailer parameters (mail.*)
 
 You can make multiple configuration files with different filenames and change mode.php to reference the appropriate configuration filename. In the above case, it would be called development.php and have the following text:
 
 ```
 development
 ```
+
+Then you should be good to go, for the most part.
+
 
 ## Progress
 
@@ -72,15 +94,12 @@ development
 + Profile pictures from Gravatar by editing User class and navigation template
 + Remember Me function - form, cookie creation/deletion, logic and Logging out
 + User Profile Route, View, and nav link
-+ Users List
++ Users List Route, View, and nav link
++ User Permissions - Created table, class, routes, and views for example administrator area
 
 ##### Up Next:
-+ User Permissions
++ Custom 404
 
 ##### Todo: A few things I've thought about doing in the future
-1. Add first and last names to User, Login route, and all associated views.
-2. Allow user to view and edit their profile
-3. Allow user to recover their password via hash link
-4. API for user statistics?
-5. Create administrator user permission
-6. Create routes and views appropriate to administrator permission
++ How to handle user statistics
++ How to do testing - unit testing package?

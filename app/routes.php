@@ -12,3 +12,5 @@ require INC_ROOT . '/app/routes/auth/logout.php';
 
 require INC_ROOT . '/app/routes/user/profile.php';
 require INC_ROOT . '/app/routes/user/all.php';
+
+require INC_ROOT . '/app/routes/admin/example.php';

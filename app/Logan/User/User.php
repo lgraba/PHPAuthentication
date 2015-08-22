@@ -11,8 +11,9 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class User extends Eloquent
 {
+	// The Users table
 	protected $table = 'users';
-
+	// Fillable quantities in this model
 	protected $fillable = [
 		'email',
 		'username',
@@ -71,6 +72,26 @@ class User extends Eloquent
 	public function removeRememberCredentials()
 	{
 		$this->setRememberCredentials(null, null);
+	}
+
+	// Check if User has certain permission
+	public function hasPermission($permission)
+	{
+		return (bool) $this->permissions->{$permission};
+	}
+
+	// Helper method for is_admin permission
+	public function isAdmin()
+	{
+		return $this->hasPermission('is_admin');
+	}
+
+	// Relate User Model to User Permissions Model
+	public function permissions()
+	{
+		// Each User has only one UserPermission associated with it, operating with foreign key user_id
+		// Note: this relational mapping automatically matches on the foreign key, I believe
+		return $this->hasOne('Logan\User\UserPermission', 'user_id');
 	}
 
 }
