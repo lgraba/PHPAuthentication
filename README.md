@@ -71,10 +71,11 @@ development
 + Added logout route and appropriate link to navigation
 + Profile pictures from Gravatar by editing User class and navigation template
 + Remember Me function - form, cookie creation/deletion, logic and Logging out
-+ User Profile
++ User Profile Route, View, and nav link
++ Users List
 
 ##### Up Next:
-+ List all users
++ User Permissions
 
 ##### Todo: A few things I've thought about doing in the future
 1. Add first and last names to User, Login route, and all associated views.
