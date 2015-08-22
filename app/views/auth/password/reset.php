@@ -1,18 +1,12 @@
 {% extends 'templates/default.php' %}
 
-{% block title %}Change Password{% endblock %}
+{% block title %}Reset Password{% endblock %}
 
 {% block content %}
 
-<h2>Change Password</h2>
+<h2>Reset {{ user.getFullNameOrUsername }}'s Password</h2>
 
-<form action="{{ urlFor('password.change.post') }}" method="post" autocomplete="off">
-
-	<div>
-		<label for="current_password">Current Password</label>
-		<input type="password" name="current_password" id="current_password">
-		{% if errors.has('Current Password') %}{{ errors.first('Current Password')}}{% endif %}
-	</div>
+<form action="{{ urlFor('password.reset.post') }}?email={{ user.email }}&identifier={{ identifier|url_encode }}" method="post" autocomplete="off">
 
 	<div>
 		<label for="new_password">New Password</label>
@@ -27,7 +21,7 @@
 	</div>
 
 	<div>
-		<input type="submit" value="Change Password">	
+		<input type="submit" value="Reset Password">
 	</div>
 
 	<input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">

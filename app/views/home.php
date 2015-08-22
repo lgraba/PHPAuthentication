@@ -3,5 +3,5 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-Home
+<h2>Home</h2>
 {% endblock %}

@@ -3,5 +3,5 @@
 {% block title %}404{% endblock %}
 
 {% block content %}
-	<h1>What are you doing? Shit not found, yo.</h1>
+	<h2>What are you doing? Shit not found, yo.</h2>
 {% endblock %}

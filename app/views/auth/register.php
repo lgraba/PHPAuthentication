@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<h2>Register</h2>
+
 <form action="{{ urlFor('register.post') }}" method="post" autocomplete="off">
 
 	<div>
