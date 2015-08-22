@@ -15,7 +15,7 @@ My work on a [tutorial by Alex Garrett](https://www.youtube.com/playlist?list=PL
 
 
 ## Getting Started
-#### Database Setup
+### Database Setup
 
 First Set up a database (Default Name: site).
 
@@ -37,6 +37,7 @@ Create table 'users' with the following structure:
 | created_at          | timestamp    | No   | CURRENT_TIMESTAMP  |
 | updated_at          | timestamp    | Yes  | NULL               |
 
+
 Create table 'users_permissions' with the following structure:
 
 | Column           | Type       | Null | Default            |
@@ -48,7 +49,7 @@ Create table 'users_permissions' with the following structure:
 | updated_at       | timestamp  | Yes  | NULL               |
 
 
-#### Configuration
+### Configuration
 
 Go ahead and copy /app/config/development.php.example to development.php:
 
@@ -56,23 +57,19 @@ Go ahead and copy /app/config/development.php.example to development.php:
 cp /app/config/development.php.example /app/config/development.php
 ```
 
-Take a look at development.php and input your own appropriate parameters within:
+#### Take a look at development.php and input your own appropriate parameters within:
 1. App URL (app.url)
-2. Database Configuration (db.*)
-3. PHPMailer parameters (mail.*)
+2. Database Configuration (db)
+3. PHPMailer parameters (mail)
 
-You can make multiple configuration files with different filenames and change mode.php to reference the appropriate configuration filename. In the above case, it would be called development.php and have the following text:
-
-```
-development
-```
+You can make multiple configuration files with different filenames and change mode.php to reference the appropriate configuration filename. In the above case, it would be called development.php and have the text `development` within it.
 
 Then you should be good to go, for the most part.
 
 
 ## Progress
 
-##### The Tutorial so far: PHP Authentication by Alex Garrett (Codecourse)
+#### The Tutorial so far: PHP Authentication by Alex Garrett (Codecourse)
 + Used composer to install dependencies from packagist.org
 + Set up directory structure, Slim framework, .htaccess for public directory
 + Configuration files
@@ -96,10 +93,12 @@ Then you should be good to go, for the most part.
 + User Profile Route, View, and nav link
 + Users List Route, View, and nav link
 + User Permissions - Created table, class, routes, and views for example administrator area
++ Custom 404 page
 
-##### Up Next:
-+ Custom 404
+#### Up Next:
++ Change password
++ Recover forgotten password
 
-##### Todo: A few things I've thought about doing in the future
+#### Todo: A few things I've thought about doing in the future
 + How to handle user statistics
 + How to do testing - unit testing package?
