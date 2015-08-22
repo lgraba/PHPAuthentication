@@ -70,9 +70,11 @@ development
 + Created CSRF middleware and implemented it in all existing forms to protect against CSRF attacks
 + Added logout route and appropriate link to navigation
 + Profile pictures from Gravatar by editing User class and navigation template
++ Remember Me function - form, cookie creation/deletion, logic and Logging out
++ User Profile
 
 ##### Up Next:
-+ Remember me function
++ List all users
 
 ##### Todo: A few things I've thought about doing in the future
 1. Add first and last names to User, Login route, and all associated views.
