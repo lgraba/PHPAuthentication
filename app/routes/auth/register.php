@@ -53,7 +53,7 @@ $app->post('/register', $guest(), function() use ($app) {
 		});
 
 		// Flash global message notification
-		$app->flash('global', 'You have been registered!');
+		$app->flash('global', 'You have been registered! Please check your email to activate your account.');
 		$app->response->redirect($app->urlFor('home'));
 	}
 

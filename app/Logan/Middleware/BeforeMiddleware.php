@@ -28,10 +28,29 @@ class BeforeMiddleware extends Middleware
 			$this->app->auth = $this->app->user->where('id', $_SESSION[$this->app->config->get('auth.session')])->first();
 		}
 
+		// Check Remember Me credentials (cookie : database) before every request to application
+		$this->checkRememberMe();
+
 		$this->app->view()->appendData([
 			'auth' => $this->app->auth,
 			'baseUrl' => $this->app->config->get('app.url')
 		]);
+	}
+
+	protected function checkRememberMe()
+	{
+		// See if cookie available
+		if ($this->app->getCookie($this->app->config->get('auth.remember')) && !$this->app->auth) {
+
+			// Grab cookie data within data_r
+			$data = $this->app->getCookie($this->app->config->get('auth.remember'));
+			// Separate cookie data by ___
+			$credentials = explode('___', $data);
+
+			// if (empty(trim($data)) || count($credentials) !== 2) {
+			// 	$this->app->response->redirect($this->app->urlFor('home'));
+			// }
+		}
 	}
 
 }

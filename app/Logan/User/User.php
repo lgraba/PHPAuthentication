@@ -38,6 +38,7 @@ class User extends Eloquent
 		return $this->getFullName() ?: $this->username;
 	}
 
+	// Update database to activate an account
 	public function activateAccount()
 	{
 		// Set 'active' to true and delete 'active_hash' in database
@@ -55,6 +56,21 @@ class User extends Eloquent
 		// Return the Gravatar URL with md5-hashed email address and size option appended on
 		// Default Gravatar set to retro
 		return 'http://www.gravatar.com/avatar/' . md5($this->email) . '?s=' . $size . '&d=retro';
+	}
+
+	// Set identifier and token for Remember Me in database
+	public function setRememberCredentials($identifier, $token)
+	{
+		$this->update([
+			'remember_identifier' => $identifier,
+			'remember_token' => $token
+		]);
+	}
+
+	// Remove identifier and token for Remember Me from database
+	public function removeRememberCredentials()
+	{
+		$this->setRememberCredentials(null, null);
 	}
 
 }
