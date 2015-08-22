@@ -47,4 +47,14 @@ class User extends Eloquent
 		]);
 	}
 
+	// For pulling in Gravatar URL
+	public function getAvatarUrl($options = [])
+	{
+		// Set size from options passed through if it is set, otherwise a standard size of 45
+		$size = isset($options['size']) ? $options['size']: 45;
+		// Return the Gravatar URL with md5-hashed email address and size option appended on
+		// Default Gravatar set to retro
+		return 'http://www.gravatar.com/avatar/' . md5($this->email) . '?s=' . $size . '&d=retro';
+	}
+
 }

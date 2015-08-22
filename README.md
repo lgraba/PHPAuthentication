@@ -69,9 +69,9 @@ development
 + Created filter middleware in order to protect routes from an authenticated user (Login, Register, Activate) or guest user
 + Created CSRF middleware and implemented it in all existing forms to protect against CSRF attacks
 + Added logout route and appropriate link to navigation
++ Profile pictures from Gravatar by editing User class and navigation template
 
 ##### Up Next:
-+ Profile pictures
 + Remember me function
 
 ##### Todo: A few things I've thought about doing in the future
