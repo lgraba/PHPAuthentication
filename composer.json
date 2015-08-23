@@ -13,6 +13,8 @@
         "alexgarrett/violin": "2.*",
         "illuminate/database": "~5.0",
         "ircmaxell/random-lib": "~1.1",
-		"zurb/foundation": "~5.5"
+		"zurb/foundation": "~5.5",
+		"components/jquery": "^2.1",
+		"components/modernizr": "^2.8"
     }
 }
