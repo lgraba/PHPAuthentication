@@ -41,7 +41,7 @@ $app->post('/account/profile', $authenticated(), function () use ($app) {
 		$app->flash('global', 'Your account details have been updated.');
 		// Redirect
 		// Note: Redirect to user.profile?
-		$app->response->redirect($app->urlFor('account.profile'));
+		return $app->response->redirect($app->urlFor('account.profile'));
 	}
 
 	$app->render('account/profile.php', [

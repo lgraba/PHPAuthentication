@@ -61,7 +61,7 @@ $app->post('/register', $guest(), function() use ($app) {
 
 		// Flash global message notification
 		$app->flash('global', 'You have been registered! Please check your email to activate your account.');
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 
 	// Render the Register View while sending it errors and request

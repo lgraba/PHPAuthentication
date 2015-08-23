@@ -21,15 +21,15 @@ $app->get('/password-reset', $guest(), function() use ($app) {
 	// Redirect to home if...
 	// No user found in database with that particular email
 	if (!$user) {
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 	// If the user doesn't have a recover_hash
 	if (!$user->recover_hash) {
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 	// Or if the hash doesn't match the database
 	if (!$app->hash->hashCheck($user->recover_hash, $hashedIdentifier)) {
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 
 	// Render the reset form view, making email and hash variables available to it
@@ -61,15 +61,15 @@ $app->post('/password-reset', $guest(), function() use ($app) {
 	// Redirect to home if...
 	// No user found in database with that particular email
 	if (!$user) {
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 	// If the user doesn't have a recover_hash
 	if (!$user->recover_hash) {
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 	// Or if the hash doesn't match the database
 	if (!$app->hash->hashCheck($user->recover_hash, $hashedIdentifier)) {
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 
 	// Validation
@@ -100,7 +100,7 @@ $app->post('/password-reset', $guest(), function() use ($app) {
 
 		// Flash global message notification fo Password Change
 		$app->flash('global', 'You have reset your password and may now log in.');
-		$app->response->redirect($app->urlFor('login'));
+		return $app->response->redirect($app->urlFor('login'));
 	}
 
 	// Render the Change Password View while sending it errors

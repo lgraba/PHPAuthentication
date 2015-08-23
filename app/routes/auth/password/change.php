@@ -49,7 +49,7 @@ $app->post('/change-password', $authenticated(), function() use ($app) {
 
 		// Flash global message notification fo Password Change
 		$app->flash('global', 'You have changed your password.');
-		$app->response->redirect($app->urlFor('home'));
+		return $app->response->redirect($app->urlFor('home'));
 	}
 
 	// Render the Change Password View while sending it errors

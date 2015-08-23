@@ -33,7 +33,7 @@ $app->post('/recover-password', $guest, function() use ($app) {
 			// Flash notification
 			$app->flash('global', 'Did you forget your email address too?');
 			// Redirect to /recover-password to all them another try
-			$app->response->redirect($app->urlFor('password.recover'));
+			return $app->response->redirect($app->urlFor('password.recover'));
 		} else {
 
 			// Generate random string
@@ -55,7 +55,7 @@ $app->post('/recover-password', $guest, function() use ($app) {
 			// Flash notification for sent email
 			$app->flash('global', 'An email with instructions on how to recover your password has been sent to ' . $user->email);
 			// Redirect home
-			$app->response->redirect($app->urlFor('home'));
+			return $app->response->redirect($app->urlFor('home'));
 		}
 
 	}

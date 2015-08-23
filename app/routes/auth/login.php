@@ -38,9 +38,9 @@ $app->post('/login', $guest(), function () use ($app) {
 			})
 			->where('active', true)
 			->first();
-		// Used grouping to make this query: "SELECT * FROM `users` WHERE (username = 'logan' OR email = 'logangraba@gmail.com') AND active = true"
+		// Used grouping to make this query: "SELECT * FROM `users` WHERE (username = '[username]' OR email = '[email]') AND active = true"
 
-		// Only allows user to sign in with username: "SELECT * FROM `users` WHERE username = 'logan' OR email = 'logangraba@gmail.com' AND active = true"
+		// Only allows user to sign in with username:
 			// ->where('username', $identifier)
 			// ->orWhere('email', $identifier)
 			// ->where('active', true) // Having a problem here - if user logs in with username, it does not check to see if active=true
@@ -80,13 +80,13 @@ $app->post('/login', $guest(), function () use ($app) {
 
 			// Flash a message at the top and redirect to Home
 			$app->flash('global', 'You are now logged in...');
-			$app->response->redirect($app->urlFor('home'));
+			return $app->response->redirect($app->urlFor('home'));
 
 		} else {
 
 			// Flash a message at the top and redirect to Login
 			$app->flash('global', 'Could not log you in!');
-			$app->response->redirect($app->urlFor('login'));
+			return $app->response->redirect($app->urlFor('login'));
 
 		}
 	}

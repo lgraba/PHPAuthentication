@@ -97,10 +97,12 @@ Then you should be good to go, for the most part.
 + Change password form, route handling, validation, and view
 + Recover forgotten password - See Validator class (custom rules)
 + Update user profile information
++ Fixed redirect statements by prepending return on each one
 
 #### Up Next:
-+ Fixes and clean up
 
 #### Todo: A few things I've thought about doing in the future
-+ How to handle user statistics
-+ How to do testing - unit testing package?
++ Homogenize form validation messages and variable names
++ Rearrange links and redirects (Ex: Place Update Profile and Change Password links in Your Profile)
++ Confirm new email address via email upon Update Profile
++ Throw in some CSS/SCSS/SASS styles (Bootstrap?)

@@ -18,6 +18,6 @@ $app->get('/logout', function () use ($app) {
 
 	// Flash logout message and redirect user to home
 	$app->flash('global', 'You are now logged out...');
-	$app->response->redirect($app->urlFor('home'));
+	return $app->response->redirect($app->urlFor('home'));
 
 })->name('logout');
