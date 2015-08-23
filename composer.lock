@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2b27ba201255a352a4cc86c014a6c0c1",
+    "hash": "abca55996149757aeeb7a1f407e53224",
     "packages": [
         {
             "name": "alexgarrett/violin",
@@ -841,6 +841,38 @@
                 "templating"
             ],
             "time": "2015-08-12 15:56:39"
+        },
+        {
+            "name": "zurb/foundation",
+            "version": "v5.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zurb/foundation.git",
+                "reference": "35851ec53c412af5e31b14636f28c248d0272577"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zurb/foundation/zipball/35851ec53c412af5e31b14636f28c248d0272577",
+                "reference": "35851ec53c412af5e31b14636f28c248d0272577",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ZURB Inc."
+                }
+            ],
+            "description": "The most advanced responsive front-end framework in the world.",
+            "homepage": "http://foundation.zurb.com",
+            "keywords": [
+                "foundation",
+                "scss"
+            ],
+            "time": "2015-04-30 17:03:48"
         }
     ],
     "packages-dev": [],

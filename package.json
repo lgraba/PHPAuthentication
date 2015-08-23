@@ -1,0 +1,29 @@
+{
+  "name": "Authentication",
+  "version": "1.0.0",
+  "description": "My work on a PHP Authentication tutorial by Alex Garrett.",
+  "main": "public/index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lgraba/PHPAuthentication.git"
+  },
+  "keywords": [
+    "PHP",
+    "authentication",
+    "codecourse"
+  ],
+  "author": "Logan Graba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgraba/PHPAuthentication/issues"
+  },
+  "homepage": "https://github.com/lgraba/PHPAuthentication",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4"
+  }
+}

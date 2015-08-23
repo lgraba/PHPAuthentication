@@ -1,3 +1,4 @@
 /app/config/development.php
 /app/config/production.php
 vendor/
+node_modules/

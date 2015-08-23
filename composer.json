@@ -12,6 +12,7 @@
         "hassankhan/config": "0.8.*",
         "alexgarrett/violin": "2.*",
         "illuminate/database": "~5.0",
-        "ircmaxell/random-lib": "~1.1"
+        "ircmaxell/random-lib": "~1.1",
+		"zurb/foundation": "~5.5"
     }
 }
