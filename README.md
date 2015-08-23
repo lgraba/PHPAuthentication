@@ -70,34 +70,33 @@ Then you should be good to go, for the most part.
 ## Progress
 
 #### The Tutorial so far: PHP Authentication by Alex Garrett (Codecourse)
-[x] Used composer to install dependencies from packagist.org
-[x] Set up directory structure, Slim framework, .htaccess for public directory
-[x] Configuration files
-[x] Created and structured database table Users
-[x] Used Eloquent to create first database-model, writing some of our own namespaced classes
-[x] Set up basic routes and views (home) using Slim and Twig
-[x] Implemented flash messages for user notifications
-[x] Set up a helper called Hash that allows us to hash passwords for security
-[x] Register route and view
-[x] Used Alex Garrett's Violin validation to validate form entries
-[x] Logging in the user and some session stuff
-[x] PHPMailer and a couple related classes to send notification emails
-[x] Email routes and views/templates
-[x] RandomLib to create random strings for hasing, like in account activation
-[x] Finished up account activation via email and activate route
-[x] Created filter middleware in order to protect routes from an authenticated user (Login, Register, Activate) or guest user
-[x] Created CSRF middleware and implemented it in all existing forms to protect against CSRF attacks
-[x] Added logout route and appropriate link to navigation
-[x] Profile pictures from Gravatar by editing User class and navigation template
-[x] Remember Me function - form, cookie creation/deletion, logic and Logging out
-[x] User Profile Route, View, and nav link
-[x] Users List Route, View, and nav link
-[x] User Permissions - Created table, class, routes, and views for example administrator area
-[x] Custom 404 page
-[x] Change password form, route handling, validation, and view
-[x] Recover forgotten password - See Validator class (custom rules)
-[x] Update user profile information
-[x] Fixed redirect statements by prepending return on each one
++ Used composer to install dependencies from packagist.org
++ Set up directory structure, Slim framework, .htaccess for public directory
++ Configuration files
++ Created and structured database table Users
++ Used Eloquent to create first database-model, writing some of our own namespaced classes
++ Set up basic routes and views (home) using Slim and Twig
++ Implemented flash messages for user notifications
++ Set up a helper called Hash that allows us to hash passwords for security
++ Register route and view
++ Used Alex Garrett's Violin validation to validate form entries
++ Logging in the user and some session stuff
++ PHPMailer and a couple related classes to send notification emails
++ Email routes and views/templates
++ RandomLib to create random strings for hasing, like in account activation
++ Finished up account activation via email and activate route
++ Created filter middleware in order to protect routes from an authenticated user (Login, Register, Activate) or guest user
++ Created CSRF middleware and implemented it in all existing forms to protect against CSRF attacks
++ Added logout route and appropriate link to navigation
++ Profile pictures from Gravatar by editing User class and navigation template
++ Remember Me function - form, cookie creation/deletion, logic and Logging out
++ User Profile Route, View, and nav link
++ Users List Route, View, and nav link
++ User Permissions - Created table, class, routes, and views for example administrator area
++ Custom 404 page
++ Change password form, route handling, validation, and view
++ Recover forgotten password - See Validator class (custom rules)+] Update user profile information
++ Fixed redirect statements by prepending return on each one
 
 #### My own stuff (this will simply be my own development notes here):
 + Get Foundation 5.5 flowin with Gulp
