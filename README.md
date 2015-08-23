@@ -95,10 +95,10 @@ Then you should be good to go, for the most part.
 + User Permissions - Created table, class, routes, and views for example administrator area
 + Custom 404 page
 + Change password form, route handling, validation, and view
-+ Recover forgotten password
++ Recover forgotten password - See Validator class (custom rules)
++ Update user profile information
 
 #### Up Next:
-+ Update user information
 + Fixes and clean up
 
 #### Todo: A few things I've thought about doing in the future

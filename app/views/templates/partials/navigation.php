@@ -9,6 +9,7 @@
 
 		<li><a href="{{ urlFor('logout') }}">Logout</a></li>
 		<li><a href="{{ urlFor('user.profile', {username: auth.username}) }}">Your Profile</a></li>
+		<li><a href="{{ urlFor('account.profile') }}">Update Your Profile</a></li>
 		<li><a href="{{ urlFor('password.change') }}">Change Password</a></li>
 
 			{% if auth.isAdmin %}

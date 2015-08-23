@@ -16,6 +16,8 @@ require INC_ROOT . '/app/routes/auth/password/reset.php';
 // User
 require INC_ROOT . '/app/routes/user/profile.php';
 require INC_ROOT . '/app/routes/user/all.php';
+// Account
+require INC_ROOT . '/app/routes/account/profile.php';
 // Admin
 require INC_ROOT . '/app/routes/admin/example.php';
 // Errors

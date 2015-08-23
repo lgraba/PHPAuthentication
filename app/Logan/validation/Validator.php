@@ -60,6 +60,11 @@ class Validator extends Violin
 	{
 		// Use Eloquent query to select users from database matching email
 		$user = $this->user->where('Email', $value);
+
+		if ($this->auth && $this->auth->email === $value) {
+			return true;
+		}
+
 		// Return FALSE if there is a user with the same email, TRUE if email unique
 		return ! (bool) $user->count();
 	}
