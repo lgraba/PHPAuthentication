@@ -27,23 +27,28 @@ gulp.task('styles', function() {
 // Scripts task
 // Question: Why didn't composer automatically install dependencies
 // for Foundation like JQuery and Modernizr?
+// Answer: I guess they were in the components directory
+// FUCK IT I'm just going to copy over foundation.min.js to the vendor/foundation directory and include it here wtf
 gulp.task('scripts', function() {
 	gulp.src([
-		'./vendor/components/jquery/jquery.js',							// Used composer to install JQuery component
-		'./vendor/zurb/foundation/js/foundation/foundation.js',			// Foundation.js (main functionality)
+		'./vendor/components/jquery/jquery.js',								// Used composer to install JQuery component (COMPONENTS)
+		'./vendor/zurb/foundation/js/foundation/foundation.js',					// Foundation.js only for loading plugins individually?
 		'./vendor/zurb/foundation/js/foundation/foundation.alert.js',	// Foundation.alert.js (alert boxes)
+		'./vendor/zurb/foundation/js/foundation/foundation.dropdown.js',	// Foundation drop downs
+		'./vendor/zurb/foundation/js/foundation/foundation.min.js',			// CANT BELIEVE I had to include this shit
 		'./assets/scripts/app.js'										// Our Foundation initializer script
 	])
 	.pipe(concat('app.js'))
 	.pipe(gulp.dest('./public/js'));									// Output in our js directory
 
-	return gulp.src('./vendor/components/modernizr/modernizr.js')		// Modernizr best included in header of document
+	return gulp.src('./vendor/components/modernizr/modernizr.js')				// Modernizr best included in header of document (COMPONENTS)
 		.pipe(gulp.dest('./public/js'));
 });
 
 // Watch task
 gulp.task('watch', function() {
 	gulp.watch('./assets/styles/**/*.scss', ['styles']);
+	gulp.watch('./assets/scripts/**/*.js', ['scripts']);
 });
 
 // Default task - runs the tasks within []

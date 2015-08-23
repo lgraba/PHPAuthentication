@@ -136,6 +136,7 @@ Then you should be good to go, for the most part.
     2. Create _settings.scss and copy foundation/scss/foundation/_settings.scss
   + Now I transition Authentication's navigation over to foundation styles
 
+I can't get foundation dropdowns working right, so I'm going to copy over foundation.min.js I guess (to vendor/foundation)
 
 #### Up Next:
 
