@@ -1,6 +1,15 @@
 @import 'foundation/settings';
 @import 'foundation';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700|Lato|Lobster);
+
+// Variables
+$lobster: 'Lobster', cursive;
+$open-sans: 'Open Sans', helvetica;
 
 body {
 	background-color: #edeff0;
+}
+
+.authentication-title {
+	font-family: $lobster;
 }
