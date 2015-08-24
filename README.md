@@ -10,7 +10,7 @@ My work on a [tutorial by Alex Garrett](https://www.youtube.com/playlist?list=PL
 
 ### Database Setup
 
-First Set up a database (Default Name: site).
+First Set up a database (default Name: site).
 
 Create table 'users' with the following structure:
 
@@ -67,7 +67,7 @@ Then you should be good to go, for the most part.
   2. [Gulp](https://github.com/gulpjs/gulp)
     1. [Gulp-SASS](https://github.com/dlmanning/gulp-sass)
     2. [Gulp-Concat](https://github.com/wearefractal/gulp-concat)
-  3. [Bower]()
+  3. [Bower](http://bower.io/)
 + Back-End PHP
   1. [Slim](https://github.com/slimphp/Slim)
   2. [Slim Views](https://github.com/slimphp/Slim-Views)
@@ -96,7 +96,12 @@ Edit /assets/styles/app.scss or /assets/styles/foundation/_settings.scss to add/
 
 ## Progress
 
-Goal: To complete the tutorial with careful consideration at each step, researching newly encountered concepts and alternate methods.
+Goals:
+1. Complete the tutorial with careful consideration for security standards/compliance at each step.
+2. Research, test, and throroughly document any newly encountered concepts with a variety of experimental alternate methods.
+3. Maintain consistent documentation throughout PHP code.
+4. Understand, replicate, then expand upon workflow practices.
+5. Have fun!
 
 #### Tutorial: PHP Authentication by Alex Garrett (Codecourse)
 + Used composer to install dependencies from packagist.org
