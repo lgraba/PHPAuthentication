@@ -96,7 +96,7 @@ Edit /assets/styles/app.scss or /assets/styles/foundation/_settings.scss to add/
 
 ## Progress
 
-Goals:
+#### Goals:
 1. Complete the tutorial with careful consideration for security standards/compliance at each step.
 2. Research, test, and throroughly document any newly encountered concepts with a variety of experimental alternate methods.
 3. Maintain consistent documentation throughout PHP code.
@@ -158,12 +158,19 @@ Note: The reason Foundation drop-down menu links weren't working is because fast
 + Todo:
   + Back-End (PHP)
     + Homogenize form validation messages and variable names
-    + Confirm new email address via email upon Update Profile
+    + Confirm new email address upon Update Profile, perhaps via email or duplicate email entry
+    + Experiment more with profile pictures and Gravatar
   + Front-End
-    + Rearrange links (Ex: Place Update Profile and Change Password links in Your Profile)
-    + Foundation familiarization/customization
-      + SCSS
+    + Rearrange links 
+      + Place Update Profile and Change Password links in Your Profile page
+      + Only give admins access to User list
+    + Nav bar styling
+    + Throw a wrapper and Foundation-standard classes on the rest
+    + Form views customization - Make them look presentable
+    + Filler body for example purposes
+      + Give a short explanation including security standards adherence, features, and test user account(admin)
   + Development Workflow
-    + Make use of gulp watch task
+    + Make use of defined workflow with gulp watch task
 
-#### In the end this will be an example for future development projects/ideas. I had a good time and learned some valuable things about authentication security compliance, Bower/Gulp workflow, and Foundation.
+## Thanks!
+In the end this will be an example for future development projects/ideas. I had a good time and learned some valuable things about authentication security compliance, Bower/Gulp workflow, and Foundation. I will continue to push updates as I develop and see fit.
