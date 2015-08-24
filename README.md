@@ -1,21 +1,13 @@
 # PHP Authentication
 My work on a [tutorial by Alex Garrett](https://www.youtube.com/playlist?list=PLfdtiltiRHWGKUvioJly40RJZchSG2-34) (Codecourse). Thanks Alex!
 
-## PHP Dependencies
-0. [Composer](https://getcomposer.org/)
-1. [Slim](https://github.com/slimphp/Slim)
-2. [Slim Views](https://github.com/slimphp/Slim-Views)
-3. [Twig](https://github.com/twigphp/Twig)
-4. [PHPMailer](https://github.com/PHPMailer/PHPMailer)
-5. [Hassankhan Config](https://packagist.org/packages/hassankhan/config)
-6. [Violin](https://github.com/alexgarrett/violin)
-7. [Illuminate Database](https://github.com/illuminate/database)
-8. [IRCMaxell RandomLib](https://packagist.org/packages/ircmaxell/random-lib)
+## Getting Started Running Authentication Site
 
-*Check the Composer file, composer.json, for the dependency list with versions*
+### Dependencies
+1. Apache 2
+2. MySQL, Postgres, SQLite, or SQL Server
+3. PHP 5 >= 5.6.0
 
-
-## Getting Started
 ### Database Setup
 
 First Set up a database (Default Name: site).
@@ -63,14 +55,48 @@ cp /app/config/development.php.example /app/config/development.php
 2. Database Configuration (db)
 3. PHPMailer parameters (mail)
 
-You can make multiple configuration files with different filenames and change mode.php to reference the appropriate configuration filename. In the above case, it would be called development.php and have the text `development` within it.
+You can make multiple configuration files with different filenames and change mode.php to reference the appropriate configuration filename. In the above case, mode.php would have the text `development` within it.
 
 Then you should be good to go, for the most part.
 
 
+## Development
+### Dependencies
++ Package Management/Workflow
+  1. [Composer](https://getcomposer.org/)
+  2. [Gulp](https://github.com/gulpjs/gulp)
+    1. [Gulp-SASS](https://github.com/dlmanning/gulp-sass)
+    2. [Gulp-Concat](https://github.com/wearefractal/gulp-concat)
+  3. [Bower]()
++ Back-End PHP
+  1. [Slim](https://github.com/slimphp/Slim)
+  2. [Slim Views](https://github.com/slimphp/Slim-Views)
+  3. [Twig](https://github.com/twigphp/Twig)
+  4. [PHPMailer](https://github.com/PHPMailer/PHPMailer)
+  5. [Hassankhan Config](https://packagist.org/packages/hassankhan/config)
+  6. [Violin](https://github.com/alexgarrett/violin)
+  7. [Illuminate Database](https://github.com/illuminate/database)
+  8. [IRCMaxell RandomLib](https://packagist.org/packages/ircmaxell/random-lib)
++ Front-End
+  1. [Foundation](https://github.com/zurb/foundation)
+    1. [Jquery](https://jquery.com/)
+    2. [Fastclick](https://github.com/ftlabs/fastclick)
+    3. [Modernizr](https://github.com/Modernizr/Modernizr)
+
+### Package Configuration Files
+See the following package configuration files:
++ composer.json
++ package.json
++ gulpfile.js
++ bower.json
+
+### Styles
+Edit /assets/styles/app.scss or /assets/styles/foundation/_settings.scss to add/change custom styles or custom Foundation style settings, respectively.
+
+
 ## Progress
 
-### Goal: To complete the tutorial with careful consideration at each step, researching newly encountered concepts and alternate methods.
+Goal: To complete the tutorial with careful consideration at each step, researching newly encountered concepts and alternate methods.
 
 #### Tutorial: PHP Authentication by Alex Garrett (Codecourse)
 + Used composer to install dependencies from packagist.org
