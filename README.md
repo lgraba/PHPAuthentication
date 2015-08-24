@@ -98,7 +98,7 @@ Edit /assets/styles/app.scss or /assets/styles/foundation/_settings.scss to add/
 
 #### Goals:
 1. Complete the tutorial with careful consideration for security standards/compliance at each step.
-2. Research, test, and throroughly document any newly encountered concepts with a variety of experimental alternate methods.
+2. Research, test, and throroughly document any newly encountered concepts with a variety of lateral experiments.
 3. Maintain consistent documentation throughout PHP code.
 4. Understand, replicate, then expand upon workflow practices.
 5. Have fun!
