@@ -3,6 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+
 <h1>Home</h1>
 <h2>Home</h2>
 <h3>Home</h3>
@@ -15,4 +16,5 @@
 <h5 class="subheader">Home</h5>
 Normal text here
 <small>Small text here</small>
+
 {% endblock %}

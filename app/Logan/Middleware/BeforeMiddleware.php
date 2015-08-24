@@ -34,7 +34,9 @@ class BeforeMiddleware extends Middleware
 		// Append data to view for usage by twig markup
 		$this->app->view()->appendData([
 			'auth' => $this->app->auth,
-			'baseUrl' => $this->app->config->get('app.url')
+			'baseUrl' => $this->app->config->get('app.url'),
+			'rootUri' => $this->app->request->getRootUri(),
+			'resourceUri' => $this->app->request->getResourceUri()
 		]);
 	}
 

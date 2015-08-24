@@ -19,26 +19,34 @@
 				<!-- Right Nav Section -->
 				<ul class="right">
 					<li class="divider"></li>
-					<li><a href="{{ urlFor('user.all') }}">All Users</a></li>
+					{% if resourceUri is same as('/users') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('user.all') }}">All Users</a></li>
 					{% if auth %}
+
 						{% if auth.isAdmin %}
+
 							<li class="divider"></li>
-							<li><a href="{{ urlFor('admin.example') }}">Admin Area</a></li>
+							{% if resourceUri is same as('/admin/example') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('admin.example') }}">Admin Area</a></li>
+
 						{% endif %}
+
 						<li class="divider"></li>
 						<li class="has-dropdown">
 							<a href="#">Your Account</a>
 							<ul class="dropdown">
-								<li><a href="{{ urlFor('user.profile', {username: auth.username}) }}">Profile</a></li>
-								<li><a href="{{ urlFor('account.profile') }}">Update Account</a></li>
-								<li><a href="{{ urlFor('password.change') }}">Change Password</a></li>
+								{% set profilePath = '/u/' ~ auth.username %}
+								{% if resourceUri is same as(profilePath) %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('user.profile', {username: auth.username}) }}">Profile</a></li>
+								{% if resourceUri is same as('/account/profile') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('account.profile') }}">Update Account</a></li>
+								{% if resourceUri is same as('/change-password') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('password.change') }}">Change Password</a></li>
 							</ul>
 						</li>
+
 					{% else %}
+						
 						<li class="divider"></li>
-						<li><a href="{{ urlFor('register') }}">Register</a></li>
+						{% if resourceUri is same as('/register') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('register') }}">Register</a></li>
 						<li class="divider"></li>
-						<li><a href="{{ urlFor('login') }}">Login</a></li>
+						{% if resourceUri is same as('/login') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('login') }}">Login</a></li>
+
 					{% endif %}
 
 				</ul>
