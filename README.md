@@ -1,7 +1,8 @@
 # PHP Authentication
 My work on a [tutorial by Alex Garrett](https://www.youtube.com/playlist?list=PLfdtiltiRHWGKUvioJly40RJZchSG2-34) (Codecourse). Thanks Alex!
 
-## Dependencies
+## PHP Dependencies
+0. [Composer](https://getcomposer.org/)
 1. [Slim](https://github.com/slimphp/Slim)
 2. [Slim Views](https://github.com/slimphp/Slim-Views)
 3. [Twig](https://github.com/twigphp/Twig)
@@ -69,7 +70,9 @@ Then you should be good to go, for the most part.
 
 ## Progress
 
-#### The Tutorial so far: PHP Authentication by Alex Garrett (Codecourse)
+### Goal: To complete the tutorial with careful consideration at each step, researching newly encountered concepts and alternate methods.
+
+#### Tutorial: PHP Authentication by Alex Garrett (Codecourse)
 + Used composer to install dependencies from packagist.org
 + Set up directory structure, Slim framework, .htaccess for public directory
 + Configuration files
@@ -98,49 +101,38 @@ Then you should be good to go, for the most part.
 + Recover forgotten password - See Validator class (custom rules)+] Update user profile information
 + Fixed redirect statements by prepending return on each one
 
-#### My own stuff (this will simply be my own development notes here):
-+ Get Foundation 5.5 flowin with Gulp
-  + In the base application directory:
-    1. 'npm install --global gulp'
-      + Did this do shit?
-    2. 'npm init'
-      + Fill out the silly details
-      + It's neat that it auto-detects the Git repo
-      + Create package.json
-    3. 'npm install gulp --save-dev'
-      + Creates /node_modules/
-    4. Create gulpfile.js
-	  + Within, require gulp and define a test task
-	  + Run it by typing 'gulp' in shell
-    5. Create /assets and /public/css, /public/js directories
-      + Make /public/css/test.css
-      + Link to test.css in default template ( {{ baseUrl }}{{ urlFor('home') }}path/to/css )
-        + urlFor works better, since we're going to put css/js in css/js directory in public/
-    6. Foundation classed HTML
-      + Input basic foundation nav-bar HTML in /app/views/partials/navigation.php
-    7. Create /assets/scripts and /assets/styles
-    8. Create gulp styles task to pull in styles, and a gulp default task to run styles task in gulpfile.js
-    9. Install gulp SASS: 'npm install gulp-sass --save-dev'
-      + See this in package.json
-    10. Install gulp-concat: 'npm install gulp-concat --save-dev'
-    11. Use gulp SASS in gulpfile.js, use it to pipe /assets/styles/app.scss through SASS and return it
-    12. Use gulp-concat in gulpfile.js, see it there
-    13. Can now run 'gulp' in shell to carry out the aforementioned instructions
-    14. Include foundation stuff
-      + Include foundation paths in gulpfile
-      + Import foundation and foundation settings in app.scss
-    15. 'gulp' will now place foundation settings, foundation framework, and app.scss into app.css
-  + Awesome!!!
-  + Now we can include custom foundation settings
-    1. Create /assets/styles/foundation
-    2. Create _settings.scss and copy foundation/scss/foundation/_settings.scss
-  + Now I transition Authentication's navigation over to foundation styles
+#### Post-Tutorial Development Notes:
++ Get Foundation 5.5 flowin with Gulp and Bower:
+  + Install Bower and initialize Bower project for front-end dependency handling
+  + Install npm --global and initialize it
+  + Install Gulp using npm --save-dev
+  + Install Foundation using gulp
+  + Install Gulp dependencies
+    + Gulp-SASS
+    + Gulp-Concat
+  + Create gulpfile and edit it according to Foundation dependencies
+  + Create required directories
+    + assets/scripts
+    + assets/styles
+    + assets/styles/foundation/
+    + public/css
+    + public/js
+  + Create assets/styles/foundation/_settings.scss from foundation source (this will be where custom foundation-related settings will be)
+  + Create assets/styles/app.scss and import foundation and foundation settings 
+  + Link to output css and js in default Authentication template
+  + Run Gulp to carry out tasks defined in gulpfile.js
+  + Hook Bower to Composer in order to update Bower components every time 'composer update' or 'composer install' is run! (see composer.json)
+Note: The reason Foundation drop-down menu links weren't working is because fast-links.js was not included (see Foundation documentation)
 
-I can't get foundation dropdowns working right, so I'm going to copy over foundation.min.js I guess (to vendor/foundation)
++ Todo:
+  + Back-End (PHP)
+    + Homogenize form validation messages and variable names
+    + Confirm new email address via email upon Update Profile
+  + Front-End
+    + Rearrange links (Ex: Place Update Profile and Change Password links in Your Profile)
+    + Foundation familiarization/customization
+      + SCSS
+  + Development Workflow
+    + Make use of gulp watch task
 
-#### Up Next:
-
-#### Todo: A few things I've thought about doing in the future
-+ Homogenize form validation messages and variable names
-+ Rearrange links and redirects (Ex: Place Update Profile and Change Password links in Your Profile)
-+ Confirm new email address via email upon Update Profile
+#### In the end this will be an example for future development projects/ideas. I had a good time and learned some valuable things about authentication security compliance, Bower/Gulp workflow, and Foundation.

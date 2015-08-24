@@ -1,55 +1,52 @@
 // gulpfile.js
 // Run this in shell: 'gulp'
 
-// Require in gulp, set to gulp variable (already installed via npm)
 var gulp = require('gulp');
-// Require in gulp-sass
 var sass = require('gulp-sass');
-// Require in gulp-concat
 var concat = require('gulp-concat');
 
-// Styles task
-gulp.task('styles', function() {
-	// console.log('You ran styles task!');
-	
-	return gulp.src([													// Source Files
-		'./assets/styles/app.scss'
+var paths = {
+	'bower': './bower_components',
+	'vendor': './bower_components/foundation/js/vendor',
+	'assets': './assets'
+};
+
+gulp.task('styles', function () {
+	return gulp.src([
+		paths.assets + '/styles/app.scss'
 	])
-	.pipe(sass({														// Compile SASS with
-		includePaths: [													// Foundation include path as object
-			'./vendor/zurb/foundation/scss'
+	.pipe(sass({
+		includePaths: [
+			paths.bower + '/foundation/scss'
 		]
-	}))											
-	.pipe(concat('app.css'))											// Concatenate all into app.css
-	.pipe(gulp.dest('./public/css'));									// Place app.css into the specified directory
+	}))
+	.pipe(concat('app.css'))
+	.pipe(gulp.dest('./public/css'));
 });
 
-// Scripts task
-// Question: Why didn't composer automatically install dependencies
-// for Foundation like JQuery and Modernizr?
-// Answer: I guess they were in the components directory
-// FUCK IT I'm just going to copy over foundation.min.js to the vendor/foundation directory and include it here wtf
 gulp.task('scripts', function() {
 	gulp.src([
-		'./vendor/components/jquery/jquery.js',								// Used composer to install JQuery component (COMPONENTS)
-		'./vendor/zurb/foundation/js/foundation/foundation.js',					// Foundation.js only for loading plugins individually?
-		'./vendor/zurb/foundation/js/foundation/foundation.alert.js',	// Foundation.alert.js (alert boxes)
-		'./vendor/zurb/foundation/js/foundation/foundation.dropdown.js',	// Foundation drop downs
-		'./vendor/zurb/foundation/js/foundation/foundation.min.js',			// CANT BELIEVE I had to include this shit
-		'./assets/scripts/app.js'										// Our Foundation initializer script
+		// paths.bower + '/jquery/dist/jquery.js',
+		// paths.bower + '/fastclick'
+		paths.vendor + '/jquery.js',
+		paths.vendor + '/fastclick.js',
+		paths.bower + '/foundation/js/foundation.js',
+		// paths.bower + '/foundation/js/foundation/foundation.alert.js',
+		paths.assets + '/scripts/app.js'
 	])
 	.pipe(concat('app.js'))
-	.pipe(gulp.dest('./public/js'));									// Output in our js directory
+	.pipe(gulp.dest('./public/js'));
 
-	return gulp.src('./vendor/components/modernizr/modernizr.js')				// Modernizr best included in header of document (COMPONENTS)
+	// return gulp.src(paths.bower + '/modernizr/modernizr.js')
+	// 	.pipe(gulp.dest('./public/js'));
+
+	return gulp.src(paths.vendor + '/modernizr.js')
 		.pipe(gulp.dest('./public/js'));
 });
 
-// Watch task
-gulp.task('watch', function() {
-	gulp.watch('./assets/styles/**/*.scss', ['styles']);
-	gulp.watch('./assets/scripts/**/*.js', ['scripts']);
+gulp.task('watch', function () {
+	gulp.watch(paths.assets + '/styles/**/*.scss', ['styles']);
+	gulp.watch(paths.assets + '/scripts/**/*.js', ['scripts']);
 });
 
-// Default task - runs the tasks within []
-gulp.task('default', ['styles','scripts']);
+gulp.task('default', ['styles', 'scripts']);

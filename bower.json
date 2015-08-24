@@ -1,0 +1,24 @@
+{
+  "name": "Authentication",
+  "version": "1.0.0",
+  "homepage": "https://github.com/lgraba/PHPAuthentication",
+  "authors": [
+    "lgraba <lgraba@gmail.com>"
+  ],
+  "description": "My work on the PHP Authentication tutorial project by Alex Garrett.",
+  "main": "/public/index.php",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  },
+  "devDependencies": {
+    "foundation": "~5.5.2"
+  }
+}

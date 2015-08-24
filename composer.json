@@ -12,9 +12,14 @@
         "hassankhan/config": "0.8.*",
         "alexgarrett/violin": "2.*",
         "illuminate/database": "~5.0",
-        "ircmaxell/random-lib": "~1.1",
-		"zurb/foundation": "~5.5",
-		"components/jquery": "^2.1",
-		"components/modernizr": "^2.8"
+        "ircmaxell/random-lib": "~1.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "bower install"
+        ],
+        "post-update-cmd": [
+            "bower install"
+        ]
     }
 }
