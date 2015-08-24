@@ -162,10 +162,10 @@ Note: The reason Foundation drop-down menu links weren't working is because fast
     + Experiment more with profile pictures and Gravatar
   + Front-End
     + Rearrange links 
-      + Place Update Profile and Change Password links in Your Profile page
-      + Only give admins access to User list
+      + ~~Place Update Profile and Change Password links in Your Profile page~~
+      + ~~Only give admins access to User list~~
     + Nav bar styling
-    + Throw a wrapper and Foundation-standard classes on the rest
+    + ~~Throw a wrapper and Foundation-standard classes on the rest~~
     + Form views customization - Make them look presentable
     + Add filler body for example purposes
       + Give a short explanation including security standards adherence, features, and test user account(admin)

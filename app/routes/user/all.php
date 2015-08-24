@@ -3,7 +3,7 @@
 // all.php
 // List all users (public)
 
-$app->get('/users', function() use ($app) {
+$app->get('/users', $admin(), function() use ($app) {
 
 	// Look up all users in database
 	$users = $app->user->where('active', true)->get();

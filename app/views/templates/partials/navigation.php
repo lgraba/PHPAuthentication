@@ -18,15 +18,17 @@
 
 				<!-- Right Nav Section -->
 				<ul class="right">
-					<li class="divider"></li>
-					{% if resourceUri is same as('/users') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('user.all') }}">All Users</a></li>
+					
 					{% if auth %}
 
 						{% if auth.isAdmin %}
 
 							<li class="divider"></li>
-							{% if resourceUri is same as('/admin/example') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('admin.example') }}">Admin Area</a></li>
-
+							{% if resourceUri is same as('/admin/example') %}<li class="has-dropdown active">{% else %}<li class="has-dropdown">{% endif %}<a href="{{ urlFor('admin.example') }}">Admin Area</a>
+								<ul class="dropdown">
+									{% if resourceUri is same as('/users') %}<li class="active">{% else %}<li>{% endif %}<a href="{{ urlFor('user.all') }}">All Users</a></li>
+								</ul>
+							</li>
 						{% endif %}
 
 						<li class="divider"></li>

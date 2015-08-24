@@ -79,13 +79,13 @@ $app->post('/login', $guest(), function () use ($app) {
 			}
 
 			// Flash a message at the top and redirect to Home
-			$app->flash('global', 'You are now logged in...');
+			$app->flash('global', 'You are now logged in.');
 			return $app->response->redirect($app->urlFor('home'));
 
 		} else {
 
 			// Flash a message at the top and redirect to Login
-			$app->flash('global', 'Could not log you in!');
+			$app->flash('global', 'Could not log you in! Check your username and password.');
 			return $app->response->redirect($app->urlFor('login'));
 
 		}

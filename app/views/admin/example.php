@@ -4,5 +4,5 @@
 
 {% block content %}
 	<h2>Example Administrator Page</h2>
-	<p>Do Administratory STuFf HerE</p>
+	<a href="{{ urlFor('user.all') }}">View all users here!</a>
 {% endblock %}
