@@ -167,10 +167,12 @@ Note: The reason Foundation drop-down menu links weren't working is because fast
     + Nav bar styling
     + Throw a wrapper and Foundation-standard classes on the rest
     + Form views customization - Make them look presentable
-    + Filler body for example purposes
+    + Add filler body for example purposes
       + Give a short explanation including security standards adherence, features, and test user account(admin)
+    + Possibly take out some instances of strong language
   + Development Workflow
     + Make use of defined workflow with gulp watch task
+    + Continue testing
 
 ## Thanks!
 In the end this will be an example for future development projects/ideas. I had a good time and learned some valuable things about authentication security compliance, Bower/Gulp workflow, and Foundation. I will continue to push updates as I develop and see fit.

@@ -4,7 +4,7 @@
 
 {% block content %}
 
-	<h2>{{ auth.getFullNameOrUsername }}'s Profile</h2>
+	<h2>{{ user.username }}'s Profile</h2>
 	<img src="{{ user.getAvatarUrl({size: 90}) }}" alt="Profile picture for {{ user.getFullNameOrUsername }}">
 	<dl>
 		{% if  user.getFullName %}
